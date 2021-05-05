@@ -1,0 +1,11 @@
+type: object
+description: ユーザの情報
+properties:
+  userId:
+    type: integer
+    example: 123
+    description: ユーザのID
+  name:
+    type: string
+    example: 太郎
+    description: ユーザの名前

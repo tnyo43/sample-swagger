@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: "sample-swagger"
+  description: "これはswaggerの練習です"
+  version: "0.0.1"
+  termsOfService: "http://swagger.io/terms/"
+paths:
+  /users/{userId}:
+    get:
+      summary: "ユーザ情報API"
+      description: "指定したuserIdのユーザ情報を返します"
+      responses:
+        200:
+          description: "成功の時"
+          content:
+            application/json:
+              schema:
+                $ref: "./components/user/get_user.yml"

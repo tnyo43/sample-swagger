@@ -1,0 +1,21 @@
+version: "3"
+services:
+  sample-swagger-ui:
+    image: swaggerapi/swagger-ui
+    volumes:
+      - ./swagger:/usr/share/nginx/html/swagger
+    environment:
+      API_URL: ./swagger/index.yml
+    ports:
+      - "8001:8080"
+
+  sample-redoc:
+    image: redocly/redoc
+
+    volumes:
+      - ./swagger:/usr/share/nginx/html/swagger
+    environment:
+      SPEC_URL: ./swagger/index.yml
+      PORT: 8080
+    ports:
+      - "8002:8080"
